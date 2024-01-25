@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Financial Projection Calculator</title>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Financial Projection Calculator</h1>
+        <div class="controls">
+            <form id="projection-form">
+                <!-- Input fields for key financial data -->
+                <label for="initial-investment">Initial Investment:</label>
+                <input type="number" id="initial-investment" required>
+
+                <label for="monthly-revenue">Monthly Revenue:</label>
+                <input type="number" id="monthly-revenue" required>
+
+                <label for="monthly-expenses">Monthly Expenses:</label>
+                <input type="number" id="monthly-expenses" required>
+
+                <label for="months">Number of Months:</label>
+                <input type="number" id="months" required>
+
+                <button type="button" onclick="calculateProjections()">Calculate Projections</button>
+            </form>
+
+            <!-- Scenario controls -->
+            <div class="scenario-controls">
+                <label for="scenario-name">Scenario Name:</label>
+                <input type="text" id="scenario-name">
+                <button type="button" onclick="saveScenario()">Save Scenario</button>
+
+                <label for="select-scenario">Select Scenario:</label>
+                <select id="select-scenario" onchange="loadScenario()">
+                    <option value="" selected>Select Scenario</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Projections display -->
+        <div id="projections-container"></div>
+    </div>
+
+    <!-- Chart.js library for graphical representation -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- JavaScript code -->
+    <script src="app.js"></script>
+</body>
+</html>
