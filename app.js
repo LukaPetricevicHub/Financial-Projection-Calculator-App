@@ -1,11 +1,10 @@
-// This version includes advanced features: Scenario Analysis, Variable Assumptions, Graphical Representation, and User Authentication.
-// Note: This is a simplified example. In a real-world scenario, user authentication should be handled securely on the server.
 
-// Array to store scenarios
+
+// store scenarios
 let scenarios = [];
 
 function calculateProjections() {
-    // Get input values
+    // input values
     const initialInvestment = parseFloat(document.getElementById('initial-investment').value);
     const monthlyRevenue = parseFloat(document.getElementById('monthly-revenue').value);
     const monthlyExpenses = parseFloat(document.getElementById('monthly-expenses').value);
@@ -31,7 +30,7 @@ function calculateProjections() {
     // Display projections
     displayProjections(projections);
 
-    // Update and display the scenario dropdown
+    // scenario dropdown
     updateScenarioDropdown();
 }
 
@@ -60,16 +59,15 @@ function displayProjections(projections) {
 }
 
 function saveScenario() {
-    // Get input values
     const scenarioName = document.getElementById('scenario-name').value;
 
-    // Validate scenario name
+    // scenario name
     if (!scenarioName) {
         alert('Please enter a scenario name.');
         return;
     }
 
-    // Store scenario data
+    // scenario data
     const scenarioData = {
         name: scenarioName,
         assumptions: {
@@ -77,14 +75,12 @@ function saveScenario() {
             monthlyRevenue: parseFloat(document.getElementById('monthly-revenue').value),
             monthlyExpenses: parseFloat(document.getElementById('monthly-expenses').value),
             months: parseInt(document.getElementById('months').value)
-            // Add more assumptions as needed
         }
     };
 
     // Save scenario
     scenarios.push(scenarioData);
 
-    // Update and display the scenario dropdown
     updateScenarioDropdown();
 
     // Clear input fields
@@ -92,7 +88,6 @@ function saveScenario() {
 }
 
 function loadScenario() {
-    // Load selected scenario and update input fields
     const selectScenario = document.getElementById('select-scenario');
     const selectedScenarioIndex = selectScenario.selectedIndex;
 
@@ -108,7 +103,7 @@ function loadScenario() {
 }
 
 function updateScenarioDropdown() {
-    // Update the scenario dropdown
+    
     const selectScenario = document.getElementById('select-scenario');
     selectScenario.innerHTML = '<option value="" selected>Select Scenario</option>';
 
