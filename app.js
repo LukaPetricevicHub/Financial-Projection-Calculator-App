@@ -1,5 +1,3 @@
-
-
 // store scenarios
 let scenarios = [];
 
